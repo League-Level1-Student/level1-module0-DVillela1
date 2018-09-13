@@ -24,10 +24,11 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
 
                 String bor = "http://www.tahitiislandstravel.com/client/files/iles/boratimmckenna-1-vig3.jpg";
-                String neb = "https://spaceplace.nasa.gov/nebula/en/nebula3.en.jpg";
+                String neb = "https://images.theconversation.com/files/86375/original/image-20150625-12984-1416ek3.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip";
 		// 2. create a variable of type "Component" that will hold your image
                 
                 Component comp;
+                Component abc;
                 
 
 		// 3. use the "createImage()" method below to initialize your Component
@@ -43,22 +44,51 @@ public class PhotoQuiz {
                 quizWindow.pack();
 
 		// 6. ask a question that relates to the image
+                
+                String ans = JOptionPane.showInputDialog("Where is this island called?");
+                
 
 		// 7. print "CORRECT" if the user gave the right answer
+                
+                if(ans.equalsIgnoreCase("Bora Bora")) {
+                	System.out.println("Correct");
+                }
+                
 
 		// 8. print "INCORRECT" if the answer is wrong
+                
+                else {
+                	System.out.println("Incorrect");
+                }
 
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
+                
+                quizWindow.remove(comp);
 
 		// 10. find another image and create it (might take more than one line of code)
+                
+                abc = createImage(neb);
 
 		// 11. add the second image to the quiz window
+                
+                quizWindow.add(abc);
 
 		// 12. pack the quiz window
+                
+                quizWindow.pack();
 
 		// 13. ask another question
+                
+                String cow = JOptionPane.showInputDialog("What is this bird called?");
 
 		// 14+ check answer, say if correct or incorrect, etc.
+                
+                if(cow.equalsIgnoreCase("Nebula")) {
+                	System.out.println("Correct");
+                }
+                else {
+                	System.out.println("Incorrect");
+                }
 
 	}
 
