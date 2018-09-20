@@ -3,6 +3,7 @@
  *    Level 1
  */
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,24 +29,48 @@ public class DuelingButtons implements ActionListener {
 
 	private void createUI() {
 		// 1. Add the panel to the frame
+		
+		frame.add(panel);
 
 		// 2. Make the frame visible
+		
+		frame.setVisible(true);
 
 		// 3. Set the text of the leftButton to "Click me!"
+		
+		leftButton.setText("Click me!");
+		leftButton.setBackground(Color.green);
+		leftButton.setOpaque(true);
 
 		// 4. Set the text of the rightButton to "Click me!"
+		
+		rightButton.setText("Click me!");
+		leftButton.setBackground(Color.orange);
+		leftButton.setOpaque(true);
 
 		// 5. Add an action listener to the leftButton
+		
+		leftButton.addActionListener(this);
 
 		// 6. Add an action listener to the rightButton
+		
+		rightButton.addActionListener(this);
 
 		// 7. Add the leftButton to the panel
+		
+		panel.add(leftButton);
 
 		// 8. Add the rightButton to the panel
+		
+		panel.add(rightButton);
 
 		// 9. Pack the frame
+		
+		frame.pack();
 
 		// 10. Set the title of the frame to "Demanding Buttons"
+		
+		frame.setTitle("Demanding Buttons");
 
 	}
 
@@ -59,6 +84,20 @@ public class DuelingButtons implements ActionListener {
 			// Set the PREFERRED size of the rightButton to BIG
 			// Set the text of the leftButton to "Click Me!"
 			// Set the PREFERRED size of the leftButton to SMALL
+		
+		if (buttonPressed == leftButton) {
+			rightButton.setText("No, click me!");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("Click Me!");
+			leftButton.setPreferredSize(SMALL);
+		}
+
+		if (buttonPressed == rightButton) {
+			leftButton.setText("No, click me!");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("Click Me!");
+			rightButton.setPreferredSize(SMALL);
+		}
 		
 		
 		/* If the buttonPressed was the rightButton, do the opposite. */
