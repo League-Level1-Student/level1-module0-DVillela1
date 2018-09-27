@@ -27,7 +27,6 @@ public void showButton() {
     button.setText("Fortune Generator");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.pack();
-
 }
 
 @Override
