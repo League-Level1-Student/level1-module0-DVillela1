@@ -1,18 +1,25 @@
 int ballx = 0;
+int i = 20;
 import ddf.minim.*;
 Minim minim;
 AudioSample sound;
 void setup(){
   size(800, 800);
-  background(0, 255, 253);
+  background(255, 203, 0);
   minim = new Minim (this);
   sound = minim.loadSample("pong.wav", 128);
 }
 
 void draw(){
-  ballx += 10;
+  ballx += i;
   fill(135, 0, 255);
-  noStroke();
   ellipse (ballx, 400, 25, 25);
-  
+  if (ballx > width) {
+   background(0, 255, 200);
+   i = -20;
+  }
+  if (ballx < 0) {
+    background(50, 100, 200);
+    i = 20;
+  }
 }
